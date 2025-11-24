@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "H2KEl4qV+D8=",
+  "success": true,
+  "projectFilePath": "D:\\AI Career\\Data\\text-analyzer-system\\TextAnalyzerSystem\\TextAnalyzerSystem.fsproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\fatma\\.nuget\\packages\\fsharp.core\\8.0.403\\fsharp.core.8.0.403.nupkg.sha512"
+  ],
+  "logs": []
+}
