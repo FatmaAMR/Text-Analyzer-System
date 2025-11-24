@@ -1,0 +1,6 @@
+This is a sample text file to test the Text Analyzer System.
+
+If you see this in console I'm done with:
+- Loading text from file
+- Loading text from console
+- Handling UTF-8 correctly
