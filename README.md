@@ -23,9 +23,8 @@ An intelligent text analysis system using F# functional programming, focusing on
 
 4. **Clone the Repository**
    ```bash
-   git clone https://github.com/YourUsername/TextAnalyzerSystem.git
-   cd TextAnalyzerSystem
-
+   git clone https://github.com/FatmaAMR/Text-Analyzer-System
+   cd TextAnalyzerSystem 
 
 5. **Open the Project in VS Code**
 ```bash
