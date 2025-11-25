@@ -2,11 +2,13 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="src\InputHandling\InputHandler.fs" />
+    <Compile Include="src/InputHandling/InputHandler.fs" />
+    <Compile Include="src/UI/MainForm.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<linker>
+  <assembly fullname="TextAnalyzerSystem">
+    <resource name="FSharpSignatureData.TextAnalyzerSystem" action="remove"></resource>
+    <resource name="FSharpSignatureCompressedData.TextAnalyzerSystem" action="remove"></resource>
+    <resource name="FSharpSignatureDataB.TextAnalyzerSystem" action="remove"></resource>
+    <resource name="FSharpSignatureCompressedDataB.TextAnalyzerSystem" action="remove"></resource>
+    <resource name="FSharpOptimizationData.TextAnalyzerSystem" action="remove"></resource>
+    <resource name="FSharpOptimizationCompressedData.TextAnalyzerSystem" action="remove"></resource>
+    <resource name="FSharpOptimizationDataB.TextAnalyzerSystem" action="remove"></resource>
+    <resource name="FSharpOptimizationCompressedDataB.TextAnalyzerSystem" action="remove"></resource>
+    <resource name="FSharpOptimizationInfo.TextAnalyzerSystem" action="remove"></resource>
+    <resource name="FSharpSignatureInfo.TextAnalyzerSystem" action="remove"></resource>
+  </assembly>
+</linker>

@@ -1,8 +1,8 @@
 {
   "version": 3,
   "targets": {
-    "net8.0": {
-      "FSharp.Core/8.0.403": {
+    "net8.0-windows7.0": {
+      "FSharp.Core/10.0.100": {
         "type": "package",
         "compile": {
           "lib/netstandard2.1/FSharp.Core.dll": {
@@ -59,15 +59,15 @@
     }
   },
   "libraries": {
-    "FSharp.Core/8.0.403": {
-      "sha512": "ldNIn4IksrJL/X3rF4R/y9pa3RmwkcGYQ3xFMdbJj8dJ9Q49J735m6sMy3MbCK9gj3YoCsxlyFeExCiNDy3gHQ==",
+    "FSharp.Core/10.0.100": {
+      "sha512": "c/r6T/HE9MWL0O0OispLtaKhVwDsiYQlLS249LoxSo1HNH/wfc0f5DE4pI6WpTXkCEdeXa66K5f9FmKLr/0cmw==",
       "type": "package",
-      "path": "fsharp.core/8.0.403",
+      "path": "fsharp.core/10.0.100",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-        "fsharp.core.8.0.403.nupkg.sha512",
+        "fsharp.core.10.0.100.nupkg.sha512",
         "fsharp.core.nuspec",
         "lib/netstandard2.0/FSharp.Core.dll",
         "lib/netstandard2.0/FSharp.Core.xml",
@@ -103,35 +103,35 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net8.0": [
-      "FSharp.Core >= 8.0.403"
+    "net8.0-windows7.0": [
+      "FSharp.Core >= 10.0.100"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\fatma\\.nuget\\packages\\": {}
+    "C:\\Users\\start\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\AI Career\\Data\\text-analyzer-system\\TextAnalyzerSystem\\TextAnalyzerSystem.fsproj",
+      "projectUniqueName": "C:\\Users\\start\\OneDrive\\Desktop\\Text Analyzer System using F#\\Text-Analyzer-System\\TextAnalyzerSystem.fsproj",
       "projectName": "TextAnalyzerSystem",
-      "projectPath": "D:\\AI Career\\Data\\text-analyzer-system\\TextAnalyzerSystem\\TextAnalyzerSystem.fsproj",
-      "packagesPath": "C:\\Users\\fatma\\.nuget\\packages\\",
-      "outputPath": "D:\\AI Career\\Data\\text-analyzer-system\\TextAnalyzerSystem\\obj\\",
+      "projectPath": "C:\\Users\\start\\OneDrive\\Desktop\\Text Analyzer System using F#\\Text-Analyzer-System\\TextAnalyzerSystem.fsproj",
+      "packagesPath": "C:\\Users\\start\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\start\\OneDrive\\Desktop\\Text Analyzer System using F#\\Text-Analyzer-System\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\fatma\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\start\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
-        "net8.0"
+        "net8.0-windows"
       ],
       "sources": {
-        "C:\\Program Files\\dotnet\\sdk\\8.0.408\\FSharp\\library-packs": {},
+        "C:\\Program Files\\dotnet\\sdk\\10.0.100\\FSharp\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
           "projectReferences": {}
         }
       },
@@ -139,16 +139,17 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "10.0.100"
     },
     "frameworks": {
-      "net8.0": {
-        "targetAlias": "net8.0",
+      "net8.0-windows7.0": {
+        "targetAlias": "net8.0-windows",
         "dependencies": {
           "FSharp.Core": {
             "include": "Runtime, Compile, Build, Native, Analyzers, BuildTransitive",
             "target": "Package",
-            "version": "[8.0.403, )",
+            "version": "[10.0.100, )",
             "generatePathProperty": true
           }
         },
@@ -163,12 +164,33 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[8.0.22, 8.0.22]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[8.0.22, 8.0.22]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[8.0.22, 8.0.22]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[8.0.22, 8.0.22]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
+          },
+          "Microsoft.WindowsDesktop.App.WindowsForms": {
+            "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.408/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
