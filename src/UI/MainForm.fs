@@ -1,9 +1,9 @@
 namespace TextAnalyzerSystem.UI
 
-open System
-open InputHandling
+
 open System.Drawing
 open System.Windows.Forms
+open Events
 
 type MainForm() as this =
     inherit Form()
@@ -25,11 +25,13 @@ type MainForm() as this =
         btn
 
     let placeholder = "Enter your text manually or paste your text file path here..."
-    let inputBox: TextBox =
+    let inputBox =
         new TextBox(
             Multiline = true,
             Dock = DockStyle.Fill,
-            Font = new Font("Segoe UI", 11.0f),
+            Font = new Font("Segoe UI", 12.0f),
+            BackColor = Color.White,
+            ForeColor = Color.FromArgb(25,25,112),
             ScrollBars = ScrollBars.Vertical, 
             Text = placeholder 
         )
@@ -55,14 +57,15 @@ type MainForm() as this =
         new TextBox(
             Multiline = true,
             Dock = DockStyle.Fill,
-            ReadOnly = true,
+            // ReadOnly = true,
             BackColor = Color.White,
-            Font = new Font("Segoe UI", 10.0f, FontStyle.Italic),
+            ForeColor = Color.FromArgb(25,25,112),
+            Font = new Font("Segoe UI", 13.0f, FontStyle.Italic),
             ScrollBars = ScrollBars.Vertical
         )
 
     // Buttons
-    let loadTextButton = createButton "Input Text (Manually)"
+    // let loadTextButton = createButton "Input Text (Manually)"
     let loadTxtFileButton = createButton "Load Text File"
     let analyzeButton = createButton "Analyze Text"
     let exportButton = createButton "Export JSON Report"
@@ -74,7 +77,7 @@ type MainForm() as this =
         new SplitContainer(
             Dock = DockStyle.Fill,
             Orientation = Orientation.Vertical,
-            SplitterDistance = 400
+            SplitterDistance = 120
         )
 
     // Results area
@@ -82,9 +85,18 @@ type MainForm() as this =
         new SplitContainer(
             Dock = DockStyle.Bottom,
             Orientation = Orientation.Horizontal,
-            Height = 220,
-            SplitterDistance = 30
+            Height = 300,
+            SplitterDistance = 10
         )
+    let loadingLabel =
+        new Label(
+            Text = "",
+            Dock = DockStyle.Top,
+            Height = 25,
+            Font = new Font("Segoe UI", 10.0f),
+            ForeColor = Color.DarkGray
+        )
+
     let spacer height =
         new Panel(Height = height, Dock = DockStyle.Top)
 
@@ -93,12 +105,12 @@ type MainForm() as this =
     do
         this.Text <- "Text Analyzer System — F# WinForms"
         this.WindowState <- FormWindowState.Maximized
-        this.FormBorderStyle <- FormBorderStyle.None
+        this.FormBorderStyle <- FormBorderStyle.Sizable
         this.Font <- new Font("Segoe UI", 10.0f)
         this.StartPosition <- FormStartPosition.CenterScreen
 
 
-        tooltip.SetToolTip(loadTextButton, "Input text manually using the text editor")
+        // tooltip.SetToolTip(loadTextButton, "Input text manually using the text editor")
         tooltip.SetToolTip(loadTxtFileButton, "Load a .txt file into the text editor")
         tooltip.SetToolTip(analyzeButton, "Analyze the entered or loaded text")
         tooltip.SetToolTip(exportButton, "Export analysis results to JSON")
@@ -109,9 +121,7 @@ type MainForm() as this =
         sidePanel.Controls.Add(analyzeButton)
         sidePanel.Controls.Add(spacer 12)
         sidePanel.Controls.Add(loadTxtFileButton)
-        sidePanel.Controls.Add(spacer 12)
-        sidePanel.Controls.Add(loadTextButton)
-
+        sidePanel.Controls.Add loadingLabel
 
         splitMain.Panel1.Controls.Add(inputBox)
         splitMain.Panel2.Controls.Add(sidePanel)
@@ -121,8 +131,7 @@ type MainForm() as this =
         this.Controls.Add(splitMain)
         this.Controls.Add(splitBottom)
 
-        // Events " Waiting for other team members functions to integrate"
 
-        // loadButton.Click.Add(fun _ -> InputHandling.loadFromFile())
-        // analyzeButton.Click.Add(fun _ -> analyze())
-        // exportButton.Click.Add(fun _ -> exportJson())
+        loadTxtFileButton.Click.Add(fun _ -> loadSelectedFile inputBox inputBox.Text )
+        analyzeButton.Click.Add(fun _ -> analyzeText inputBox  resultsBox )
+        exportButton.Click.Add(fun _ -> exportJSONReport inputBox  resultsBox)
