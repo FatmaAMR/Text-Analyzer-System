@@ -27,3 +27,4 @@ D:\AI Career\Data\text-analyzer-system\TextAnalyzerSystem\obj\Debug\net8.0\refin
 D:\AI Career\Data\text-analyzer-system\TextAnalyzerSystem\obj\Debug\net8.0\TextAnalyzerSystem.pdb
 D:\AI Career\Data\text-analyzer-system\TextAnalyzerSystem\obj\Debug\net8.0\TextAnalyzerSystem.genruntimeconfig.cache
 D:\AI Career\Data\text-analyzer-system\TextAnalyzerSystem\obj\Debug\net8.0\ref\TextAnalyzerSystem.dll
+D:\AI Career\Data\text-analyzer-system\TextAnalyzerSystem\obj\Debug\net8.0\TextAnalyzerSystem.sourcelink.json

@@ -1,4 +1,4 @@
-module InputHandling
+module InputHandler
 
 open System
 open System.IO
