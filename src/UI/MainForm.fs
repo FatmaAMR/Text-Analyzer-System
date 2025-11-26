@@ -24,14 +24,26 @@ type MainForm() as this =
         btn.UseCompatibleTextRendering <- true
         btn
 
+    let placeholder = "Enter your text manually or paste your text file path here..."
     let inputBox: TextBox =
         new TextBox(
             Multiline = true,
             Dock = DockStyle.Fill,
             Font = new Font("Segoe UI", 11.0f),
-            ScrollBars = ScrollBars.Vertical   
+            ScrollBars = ScrollBars.Vertical, 
+            Text = placeholder 
         )
-
+        
+    do inputBox.GotFocus.Add(fun _ ->
+        if inputBox.Text = placeholder then
+            inputBox.Text <- ""
+            inputBox.ForeColor <- Color.Black
+    )
+    do inputBox.LostFocus.Add(fun _ ->
+        if inputBox.Text.Trim() = "" then
+            inputBox.Text <- placeholder
+            inputBox.ForeColor <- Color.Gray
+    )
     let sidePanel =
         new Panel(
             Dock = DockStyle.Fill,
@@ -80,8 +92,8 @@ type MainForm() as this =
     // Form Initialization
     do
         this.Text <- "Text Analyzer System — F# WinForms"
-        this.Width <- 700
-        this.Height <- 500
+        this.WindowState <- FormWindowState.Maximized
+        this.FormBorderStyle <- FormBorderStyle.None
         this.Font <- new Font("Segoe UI", 10.0f)
         this.StartPosition <- FormStartPosition.CenterScreen
 

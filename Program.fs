@@ -9,7 +9,8 @@ open TextAnalyzerSystem.UI
 
 [<EntryPoint>]
 let main argv =
-    
+    Application.EnableVisualStyles()
+    Application.Run(new MainForm())
     printfn "=== Text Analyzer ==="
     printfn "Choose input source:"
     printfn "1. Load from file"
@@ -80,7 +81,6 @@ let main argv =
         printfn $"Reading Ease Score: {readingEase:F2}"
         printfn "\nTop Words:"
         topWords |> List.iter (fun (w, c) -> printfn $"  {w}: {c}")
-    Application.EnableVisualStyles()
-    Application.Run(new MainForm())
+
 
         0

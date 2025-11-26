@@ -12,7 +12,6 @@
     <Compile Include="src\Metrics\MetricsCalculator.fs" />
     <Compile Include="src\FileIO\ReportExporter.fs" />
     <Compile Include="src\InputHandling\InputHandler.fs" />
-    <Compile Include="src/InputHandling/InputHandler.fs" />
     <Compile Include="src/UI/MainForm.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
