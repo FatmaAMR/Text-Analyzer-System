@@ -1,4 +1,0 @@
-An intelligent text analysis system using F# functional programming,
-focusing on immutable data structures, functional sequences, and pattern matching.
-It process text input (files or manual), 
-calculate various statistics, generate reports, and allow users to view results via a simple UI.

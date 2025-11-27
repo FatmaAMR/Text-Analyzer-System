@@ -1,6 +1,4 @@
-This is a sample text file to test the Text Analyzer System.
-
-If you see this in console I'm done with:
-- Loading text from file
-- Loading text from console
-- Handling UTF-8 correctly
+An intelligent text analysis system using F# functional programming,
+focusing on immutable data structures, functional sequences, and pattern matching.
+It process text input (files or manual), 
+calculate various statistics, generate reports, and allow users to view results via a simple UI.

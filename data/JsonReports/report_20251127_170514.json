@@ -1,0 +1,46 @@
+{
+  "Timestamp": "2025-11-27T17:05:14.8380088+02:00",
+  "TotalParagraphs": 1,
+  "TotalSentences": 1,
+  "TotalWords": 11,
+  "AverageSentenceLength": 11,
+  "ReadingEaseScore": 87.99727272727276,
+  "TopWords": [
+    {
+      "Item1": "your",
+      "Item2": 2
+    },
+    {
+      "Item1": "text",
+      "Item2": 2
+    },
+    {
+      "Item1": "enter",
+      "Item2": 1
+    },
+    {
+      "Item1": "manually",
+      "Item2": 1
+    },
+    {
+      "Item1": "or",
+      "Item2": 1
+    },
+    {
+      "Item1": "paste",
+      "Item2": 1
+    },
+    {
+      "Item1": "file",
+      "Item2": 1
+    },
+    {
+      "Item1": "path",
+      "Item2": 1
+    },
+    {
+      "Item1": "here",
+      "Item2": 1
+    }
+  ]
+}

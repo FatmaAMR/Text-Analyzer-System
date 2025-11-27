@@ -57,15 +57,14 @@ type MainForm() as this =
         new TextBox(
             Multiline = true,
             Dock = DockStyle.Fill,
-            // ReadOnly = true,
+            ReadOnly = true,
             BackColor = Color.White,
             ForeColor = Color.FromArgb(25,25,112),
             Font = new Font("Segoe UI", 13.0f, FontStyle.Italic),
             ScrollBars = ScrollBars.Vertical
         )
 
-    // Buttons
-    // let loadTextButton = createButton "Input Text (Manually)"
+
     let loadTxtFileButton = createButton "Load Text File"
     let analyzeButton = createButton "Analyze Text"
     let exportButton = createButton "Export JSON Report"
@@ -110,7 +109,6 @@ type MainForm() as this =
         this.StartPosition <- FormStartPosition.CenterScreen
 
 
-        // tooltip.SetToolTip(loadTextButton, "Input text manually using the text editor")
         tooltip.SetToolTip(loadTxtFileButton, "Load a .txt file into the text editor")
         tooltip.SetToolTip(analyzeButton, "Analyze the entered or loaded text")
         tooltip.SetToolTip(exportButton, "Export analysis results to JSON")

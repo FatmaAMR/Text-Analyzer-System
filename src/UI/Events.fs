@@ -2,6 +2,7 @@ module TextAnalyzerSystem.UI.Events
 
 open System
 open System.Windows.Forms
+open System.IO
 open TextAnalyzerSystem.InputHandling.FileLoader
 open TextAnalyzerSystem.Utils.AsyncUI
 open Tokenizer
@@ -74,7 +75,6 @@ let exportJSONReport (inputBox:TextBox) (resultsBox:TextBox) =
         MessageBox.Show("No text to export", "Error") |> ignore
 
     else
-        // Recompute analysis
         let paragraphs = tokenizeParagraphs text
         let sentences = tokenizeSentences text
         let words = tokenizeWords text
@@ -97,16 +97,13 @@ let exportJSONReport (inputBox:TextBox) (resultsBox:TextBox) =
                 TopWords = topWords
             }
 
-        use dialog = new SaveFileDialog()
-        dialog.Filter <- "JSON Files (*.json)|*.json"
-        dialog.FileName <- "report.json"
 
-        match dialog.ShowDialog() with
-        | DialogResult.OK ->
-            let outputPath = dialog.FileName
-            match saveReportToJSON outputPath report with
-            | Ok msg ->
-                resultsBox.Text <- $"Report saved successfully:\n{outputPath}"
-            | Error err ->
-                resultsBox.Text <- $"Error saving report:\n{err}"
-        | _ -> ()
+        // ---- Auto-save to project directory ----
+        let fileName = $"report_{DateTime.Now:yyyyMMdd_HHmmss}.json"
+        let outputPath = Path.Combine(Environment.CurrentDirectory,"data\\JsonReports", fileName)
+
+        match saveReportToJSON outputPath report with
+        | Ok msg ->
+            resultsBox.Text <- $"Report saved successfully:\n{outputPath}"
+        | Error err ->
+            resultsBox.Text <- $"Error saving report:\n{err}"
