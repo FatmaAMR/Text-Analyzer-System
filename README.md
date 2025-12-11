@@ -42,3 +42,9 @@ dotnet build
 ```bash
 dotnet run
 ```
+8. **Run the test script**
+
+```bash
+dotnet test d:\Text-Analyzer-System\text-analyser-db\Tests
+```
+
